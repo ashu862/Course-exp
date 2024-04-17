@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Student Details</h2>
+  
+  <div class="row">
+    <!-- Dropdowns -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Program
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="dataScienceCheckbox" value="Data Science">
+            <label class="form-check-label" for="dataScienceCheckbox">
+              Data Science
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cyberSecurityCheckbox" value="Cyber Security">
+            <label class="form-check-label" for="cyberSecurityCheckbox">
+              Cyber Security
+            </label>
+          </div>
+          <!-- Add more programs here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Education
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="bachelorsCheckbox" value="Bachelor's">
+            <label class="form-check-label" for="bachelorsCheckbox">
+              Bachelor's
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="mastersCheckbox" value="Masters">
+            <label class="form-check-label" for="mastersCheckbox">
+              Masters
+            </label>
+          </div>
+          <!-- Add more education levels here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Industry
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="technologyCheckbox" value="Technology">
+            <label class="form-check-label" for="technologyCheckbox">
+              Technology
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="financeCheckbox" value="Finance">
+            <label class="form-check-label" for="financeCheckbox">
+              Finance
+            </label>
+          </div>
+          <!-- Add more industries here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Company Size
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sizeLessThan100Checkbox" value="<100">
+            <label class="form-check-label" for="sizeLessThan100Checkbox">
+              Less than 100
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="size100To1000Checkbox" value="100-1000">
+            <label class="form-check-label" for="size100To1000Checkbox">
+              100-1000
+            </label>
+          </div>
+          <!-- Add more company sizes here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+  </div>
+
+  <div id="studentDetails" class="mt-3 row">
+    <!-- Student details will be displayed here -->
+  </div>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Sample student data (replace with your actual data)
+  var students = [
+    { name: 'John Doe', image: 'https://via.placeholder.com/151', course: 'Course 1', grade: 'Grade 1', subject: 'Subject 1', semester: 'Semester 1' },
+    { name: 'Jane Smith', image: 'https://via.placeholder.com/152', course: 'Course 2', grade: 'Grade 2', subject: 'Subject 2', semester: 'Semester 2' },
+    { name: 'Jiya Doe', image: 'https://via.placeholder.com/153', course: 'Course 1', grade: 'Grade 1', subject: 'Subject 1', semester: 'Semester 1' },
+    { name: 'Jam Smith', image: 'https://via.placeholder.com/154', course: 'Course 2', grade: 'Grade 2', subject: 'Subject 2', semester: 'Semester 2' },
+   
+    // Add more student data here
+  ];
+
+  // Function to filter students based on selected checkboxes
+  function filterStudents() {
+    var selectedCourses = [];
+    var selectedGrades = [];
+    var selectedSubjects = [];
+    var selectedSemesters = [];
+
+    // Get selected options from each dropdown
+    $('input[type="checkbox"][id^="data"]:checked').each(function() {
+      selectedCourses.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="bachelors"]:checked').each(function() {
+      selectedGrades.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="technology"]:checked').each(function() {
+      selectedSubjects.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="size"]:checked').each(function() {
+      selectedSemesters.push($(this).val());
+    });
+
+    // Filter students based on selected options
+    var filteredStudents = students.filter(function(student) {
+      return (
+        (selectedCourses.length === 0 || selectedCourses.includes(student.course)) &&
+        (selectedGrades.length === 0 || selectedGrades.includes(student.grade)) &&
+        (selectedSubjects.length === 0 || selectedSubjects.includes(student.subject)) &&
+        (selectedSemesters.length === 0 || selectedSemesters.includes(student.semester))
+      );
+    });
+
+    // Update student details display
+    displayStudents(filteredStudents);
+  }
+
+  // Function to display filtered student details
+  function displayStudents(students) {
+    var studentDetailsContainer = $('#studentDetails');
+    studentDetailsContainer.empty();
+
+    students.forEach(function(student) {
+      var studentCard = $('<div class="col-md-3 mb-3">');
+      var cardBody = $('<div class="card-body text-center">');
+      var studentImage = $('<img class="img-fluid mb-2" src="' + student.image + '" alt="Student Image">');
+      var studentName = $('<h5 class="card-title">' + student.name + '</h5>');
+
+      cardBody.append(studentImage);
+      cardBody.append(studentName);
+      studentCard.append(cardBody);
+      studentDetailsContainer.append(studentCard);
+    });
+  }
+
+  // Call the filterStudents function when a checkbox is clicked
+  $('input[type="checkbox"]').click(filterStudents);
+</script>
+
+</body>
+</html>
+
+
+
+<!-- email-->
+<div class="container mt-5">
+  <h2>Email Form</h2>
+  <form action="/email" method = "post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{{ email }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!--boiler plate-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Email</title>
+    <!-- css only -->
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Ubuntu&display=swap" 
+    rel="stylesheet"/>
+    <!-- css style sheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'india_job/course.css' %}"/>
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- javascript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* CSS for the left section with id "achievement" */
+      #achievement {
+        background-color: #ffdab9; /* Peach color */
+        padding: 20px;
+        margin: 10px; /* Margin from the border */
+      }
+
+      #carousel{
+         /* Peach color */
+        padding: 20px;
+        margin: 10px;
+
+      }
+      .subheading {
+        cursor: pointer;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .career-text {
+        margin-top: 20px;
+      }
+      .career-link {
+        color: blue;
+      }
+
+      /* */
+      #footer {
+        text-align: center;
+        padding: 7% 15%;
+      }
+      #press {
+        background-color: #F7B787;
+        text-align: center;
+        padding: 3%;
+      }
+      #navbar {
+        background-color: #35374B; /* Background color */
+      
+    }
+
+    #navbar a {
+        float: left;
+        display: block;
+        color: #35374B; /* Text color */
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #navbar a:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: black; /* Text color on hover */
+    }
+  
+    #title1{
+      background-color: #7BD3EA;
+    }
+    .split-half{
+      background-color: #96E9C6;
+    }
+    #project{
+      background-color: #96EFFF;
+    }
+    #scroll{
+      background-color: #F2C18D;
+
+    }
+    #info{
+      background-color: #FFCAD4;
+    }
+    #end{
+      background-color: #B7C9F2;
+    }
+    #footer{
+      background-color: #FFCAD4;
+    }
+    #carousel{
+      background-color: #B7C9F2;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+    .section .content {
+      display: flex;
+      align-items: center;
+    }
+    .section .content .text {
+      padding: 0 20px;
+    }
+    .section .content img {
+      max-width: 100%;
+    }
+    .jumbotron {
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000000;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .split-half {
+      height: 100vh;
+    }
+    </style>
+
+  </head>
+  <!--
+  <img src= "{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+  -->
+
+  <body>
+    <section id="navbar" style="z-index: 1000;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Brand image -->
+          <div class="navbar-brand">
+            <img src="{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+          </div>
+    
+          <!-- Brand name -->
+          <span class="navbar-text" style="width: 20%;">NyKinSky & Company</span>
+    
+          <!-- Dropdown buttons -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: 100%;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- First dropdown -->
+              <li class="nav-item dropdown">
+                <h6><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Course
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item dropdown-header">
+                      <h6><a href="/data_ai"> <i class="fa-solid fa-database"></i>Data + AI</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="#">Data Analytics CAreer Track</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Data Science Prep</a>
+                    </li>
+                  </div>
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item">
+                      <h6><a href="#"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="#">Cybersecurit Career Track </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="#">Intro</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <!-- Second dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Why Nykinsky</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown2">
+                  <li class="dropdown-item">
+                    <a href="#">How it works</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Mentorship</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Job gurantee</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Outcomes & stories</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Third dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Our Partners</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown3">
+                  <li class="dropdown-item">
+                    <a href="#">Universities</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Businesses</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Hire for graduates</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">Blogs</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Add more dropdowns with similar structure if needed -->
+            </ul>
+          </div>
+    
+          <!-- Button at right -->
+          <div style="width: 10%; text-align: right;">
+            <button class="btn btn-primary">APPLY</button>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    
+    <!-- Footer -->
+    
+
+    <footer id="footer">
+      <i class="social-icon fa-brands fa-twitter"></i>
+      <i class="social-icon fa-brands fa-facebook"></i>
+      <i class="social-icon fa-brands fa-instagram"></i>
+      <i class="social-icon fa-solid fa-envelope"></i>
+      <p>© Copyright NyKinSky</p>
+      <p>created by <i class="fa-solid fa-heart"></i><em>Ashu</em></p>
+    </footer>
+    
+  </body>
+</html>

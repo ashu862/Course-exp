@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Search</title>
+</head>
+<body>
+    <nav>
+        <form method="get" action="{% url 'search' %}">
+            {% csrf_token %}
+            <label for="id_job_name">Job Name:</label>
+            {{ form.job_name }}
+            <label for="id_location">Location:</label>
+            {{ form.location }}
+            <label for="id_experience">Experience:</label>
+            {{ form.experience }}
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+    <div>
+        <!-- Add your content here -->
+        <h1>Welcome to Job Search</h1>
+        <!-- You can insert data here -->
+    </div>
+</body>
+</html>

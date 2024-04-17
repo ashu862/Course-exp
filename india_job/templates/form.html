@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Resume</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'india_job/styles.css' %}">
+</head>
+<body>
+
+<section id="form_page_submit">  
+
+<div class="container mt-5">
+  <h2>Career at NyKinSKy</h2>
+  
+  <form action="/form" method="post">
+
+  
+
+    {% csrf_token %}
+    <div class="form-group">
+      <!--dropdown-->
+      <div class="form-group">
+        <label for="role">Role for Job</label>
+        <select class="form-control" id="role" name="role" required {{ role }}>
+          <option value="Tech">Tech</option>
+          <option value="Sales">Sales</option>
+          <option value="Data">Data</option>
+        </select>
+      </div>
+      <!--labels-->
+      <label for="full_name">Full Name</label>
+      <input type="text" class="form-control" id="full_name" name="full_name" required {{ full_name }}>
+    </div>
+ 
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required {{ email }}>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required {{ phone}}>
+    </div>
+    
+    <!-- Resume PDF Upload -->
+    <div class="form-group">
+      <label for="resume_file">Upload Resume (PDF)</label>
+      <input type="file" class="form-control-file" id="resume_file" name="resume_file" accept=".pdf" required {{ resume_file }}>
+    </div>
+
+    <button type="submit" class="btn btn-dark" >Submit Application</button>
+  </form>
+</div>
+
+
+</section>
+</body>
+</html>

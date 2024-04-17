@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'india_job/course.css' %}">
+    <style>
+        /* Global CSS */
+        body {
+            font-family: 'Montserrat';
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        /* CSS for navbar */
+  #navbar {
+    background-color: #35374B; /* Background color */
+  }
+
+  #navbar a {
+    float: left;
+    display: block;
+    color: black; /* Text color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  #navbar a:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: white; /* Text color on hover */
+  }
+       
+        /* Title1 Section */
+        #title1 {
+            background-color: #8FF6ED;
+            padding: 50px 0;
+        }
+
+        #title1 .row {
+            flex-direction: column-reverse;
+        }
+
+        #title1 .col-sm-6 {
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            #title1 .row {
+                flex-direction: row;
+            }
+
+            #title1 .col-sm-6 {
+                margin-top: 0;
+            }
+        }
+
+        /* Split Half Section */
+        .split-half {
+            background-color: #96E9C6;
+            height: 100vh;
+        }
+
+        /* Project Section */
+        #project {
+            background-color: #96EFFF;
+            padding: 50px 0;
+        }
+
+        /* Scroll Section */
+        #scroll {
+            background-color: #F2C18D;
+            padding: 50px 0;
+        }
+
+        /* Info Section */
+        #info {
+            background-color: #achievement {
+        background-color: #ffdab9; /* Peach color */
+        padding: 20px;
+        margin: 10px; /* Margin from the border */
+      }
+
+      #carousel{
+         /* Peach color */
+        padding: 20px;
+        margin: 10px;
+
+      }
+      .subheading {
+        cursor: pointer;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .career-text {
+        margin-top: 20px;
+      }
+      .career-link {
+        color: blue;
+      }
+
+      /* */
+      #footer {
+        text-align: center;
+        padding: 7% 15%;
+      }
+      ;
+            padding: 50px 0;
+        }
+
+        /* End Section */
+        #end {
+            background-color: #B7C9F2;
+            padding: 50px 0;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #FFCAD4;
+            text-align: center;
+            padding: 50px 0;
+            color: #000;
+        }
+
+        .social-icon {
+            margin: 0 5px;
+            color: #000;
+        }
+        
+        
+      #logo{
+        background-color:#A6E5EC ;
+        text-align: center;
+        padding: 3%;
+      }
+        #content{
+            background-color: #C9F2F0;
+            padding: 10px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .card{
+            margin: 10px;
+        }
+        .card-body{
+            background-color: #D9EFF2;
+        }
+
+
+        /* Features Section - Home Page
+------------------------------*/
+.features .features-item {
+  color: rgba(var(--default-color-rgb), 0.8);
+}
+
+.features .features-item+.features-item {
+  margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .features .features-item+.features-item {
+    margin-top: 40px;
+  }
+}
+
+.features .features-item h3 {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.features .features-item .btn-get-started {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 8px 30px 10px 30px;
+  border-radius: 4px;
+}
+
+.features .features-item .btn-get-started:hover {
+  background-color: rgba(var(--accent-color-rgb), 0.9);
+}
+
+.features .features-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features .features-item ul li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.features .features-item ul li:last-child {
+  padding-bottom: 0;
+}
+
+.features .features-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+.features .features-item img {
+  border: 6px solid var(--background-color);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.features .features-item .features-img-bg {
+  position: relative;
+  min-height: 500px;
+}
+
+@media (max-width: 640px) {
+  .features .features-item .features-img-bg {
+    min-height: 300px;
+  }
+}
+
+.features .features-item .features-img-bg img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.features .features-item .image-stack {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.features .features-item .image-stack .stack-back {
+  grid-column: 4/-1;
+  grid-row: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+.features .features-item .image-stack .stack-front {
+  grid-row: 1;
+  grid-column: 1/span 8;
+  margin-top: 20%;
+  width: 100%;
+  z-index: 2;
+}
+
+#features{
+  margin-top:20px;
+  background-color: #F0B5B5;
+}
+
+/* Pricing Table Section
+--------------------------------*/
+#pricing .block-pricing {
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+@media (max-width: 991px) {
+  #pricing .block-pricing {
+    margin-bottom: 30px;
+  }
+}
+
+#pricing .block-pricing .table {
+  margin-bottom: 0;
+  padding: 30px 15px;
+  max-width: 100%;
+  width: 100%;
+}
+
+#pricing .block-pricing .pricing-table h4 {
+  padding-bottom: 30px;
+}
+
+#pricing .block-pricing h2 {
+  margin-bottom: 30px;
+}
+
+#pricing .block-pricing ul {
+  list-style: outside none none;
+  margin: 10px auto;
+  max-width: 240px;
+  padding: 0;
+}
+
+#pricing .block-pricing ul li {
+  border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+  padding: 12px 0;
+  text-align: center;
+}
+
+#pricing .block-pricing ul li b {
+  color: #3c4857;
+}
+
+#pricing .block-pricing .pricing-table .table_btn a {
+  background: #71c55d;
+  color: #fff;
+  margin: 0;
+  display: inline-block;
+}
+
+#pricing .block-pricing .pricing-table .table_btn a:hover {
+  background: #55b03f;
+}
+
+#pricing .block-pricing .pricing-table .table_btn a .fa {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+#pricing{
+  background-color: #A9F4D1;
+  margin: 10px;
+}
+
+#carousel{
+  background-color: #86F7D1;
+
+}
+#info{
+  background-color: #86F7D1;
+}
+#email_form{
+  background-color:#BEE9F0;
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <section id="navbar" style="z-index: 1000;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Brand image -->
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+                    NyKinSky & Company
+                </a>
+                <!-- Dropdown buttons -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Dropdown items -->
+                        <!-- Replace with your dropdown items -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!-- First dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Course
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                    <li><a class="dropdown-item" href="/data_ai"><i class="fa-solid fa-database"></i> Data + AI</a></li>
+                                    <li><a class="dropdown-item" href="/data_one">Data Analytics Career Track</a></li>
+                                    <li><a class="dropdown-item" href="/data12">Data Science Prep</a></li>
+                                    <li><a class="dropdown-item" href="/cybers"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></li>
+                                    <li><a class="dropdown-item" href="/cyber11">Cybersecurity Career Track</a></li>
+                                    <li><a class="dropdown-item" href="/cyber12">Intro</a></li>
+                                </ul>
+                            </li>
+                            <!-- Second dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <b>Why Nykinsky</b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown2">
+                                    <li><a class="dropdown-item" href="/why1">How it works</a></li>
+                                    <li><a class="dropdown-item" href="/why2">Mentorship</a></li>
+                                    <li><a class="dropdown-item" href="/why3">Job guarantee</a></li>
+                                    <li><a class="dropdown-item" href="/why4">Outcomes & stories</a></li>
+                                </ul>
+                            </li>
+                            <!-- Third dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <b>Our Partners</b>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown3">
+                                    <li><a class="dropdown-item" href="/p1">Universities</a></li>
+                                    <li><a class="dropdown-item" href="/p2">Businesses</a></li>
+                                    <li><a class="dropdown-item" href="/p3">Hire for graduates</a></li>
+                                    <li><a class="dropdown-item" href="/p4">Blogs</a></li>
+                                </ul>
+                            </li>
+                            <!-- Add more dropdowns with similar structure if needed -->
+                        </ul>
+                    </ul>
+                </div>
+                <!-- Button at right -->
+                <a class="btn btn-primary" href="#end">Read More</a>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Title1 Section -->
+    <!-- Title section -->
+  <section id="title1" class="container-fluid">
+    <div class="row">
+        <!-- Text Display -->
+        <div class="col-sm-6">
+            <div class="text-center py-5">
+                <h1>Online learning with experts in your corner</h1>
+                <h4>Gain the confidence to launch a new career in 9 months or less, backed by a job guarantee.</h4>
+                <hr>
+                <div class="text-start px-4">
+                    <p><i class="fa-solid fa-check"></i> Expansive tech curriculum <b>makes it easy</b> to build pro skills with articles, videos, hands-on practice, and portfolio projects</p>
+                    <p><i class="fa-solid fa-check"></i> Our online learning platform gives you simple ways to set goals, track your progress, and get help when you need it</p>
+                    <p><i class="fa-solid fa-check"></i> You’re matched with an industry mentor who guides your growth throughout the program via regular video calls</p>
+                    <p><i class="fa-solid fa-check"></i> A career services team helps you build networking, interviewing, and job search skills even after graduation</p>
+                </div>
+            </div>
+        </div>
+        <!-- Form -->
+        <div class="col-sm-6">
+            <div class="text-center py-5">
+                <h1>Ready to launch Career?</h1>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <label for="dropdown">Select courses</label>
+                        <select class="form-control" id="dropdown">
+                            <option value="option1">AI</option>
+                            <option value="option2">ML</option>
+                            <option value="option3">DL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <hr>
+                <h3>We’ve helped thousands of grads go from beginner to pro, landing jobs at companies like these:</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Logos section -->
+    <section id="logo">
+        <div class="row">
+            <div class="col text-center">
+                <img class="press-logo" src="{% static 'images/techcrunch.png' %}" alt="tc-logo">
+                <img class="press-logo" src="{% static 'images/tnw.png' %}" alt="tnw-logo">
+                <img class="press-logo" src="{% static 'images/bizinsider.png' %}" alt="biz-insider-logo">
+                <img class="press-logo" src="{% static 'images/mashable.png' %}" alt="mashable-logo">
+            </div>
+        </div>
+    </section>
+  
+    <!-- Your logos section -->
+
+    <!-- Content section -->
+        <!--new section-->
+        <section id="content">
+        
+            <!-- Jumbotron -->
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container text-center">
+                <h1>choose Course & project for Work Experience</h1>
+                <h3><p>Discover my journey in IT, AI, and ML</p><h3>
+                <h4>Want a new career? Ok, let’s do it. In as little as 6 months, you’ll learn the tools, skills, and insights to get the job you want—all with an expert team of humans supporting your journey</h4>
+              </div>
+            </div>
+          </section>
+    <!-- Your content section -->
+    <!-- Projects Section -->
+    <section id="project">
+        <h2 class="text-center mb-4">Projects and Courses On</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                  <i class="fa-solid fa-robot"></i>
+                <h5 class="card-title">Cybersecurity</h5>
+                <p><b>JOB GUARANTEE</b></p>
+                
+                <p class="card-text">Understand users deeply and create experiences they love</p>
+                <button type="button" class="btn btn-dark">View Course</button>
+
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                  <i class="fa-solid fa-shield"></i>
+                <h5 class="card-title">UI / UX Design</h5>
+                <p class="card-text">Front-end, back-end, full-stack — write the code that will shape the future</p>
+                <button type="button" class="btn btn-light">Know more!</button>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                  <i class="fa-solid fa-laptop-code"></i>
+                <h5 class="card-title">Software Engineering</h5>
+                <p><b>JOB GUARANTEE</b></p>
+                <p class="card-text">Description of the project goes here.</p>
+                <button type="button" class="btn btn-dark">View More!</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Work Experience Section -->
+      <section id="project">
+        <h2 class="text-center mb-4">Work Experience</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">NyKinSky & Company</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Python Developer</h6>
+                <p class="card-text">Description of work experience goes here.</p>
+                <button type="button" class="btn btn-secondary">View More!</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">NyKinSky & Company</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Data Analyst</h6>
+                <p class="card-text">Description of work experience goes here.</p>
+                <button type="button" class="btn btn-dark">View More!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <!-- Scroll section -->
+    <section id="scroll">
+      <!---->
+      <div class="container">
+          <div class="row">
+            <div class="col">
+          
+                  <p class="text-center">THE SPRINGBOARD DIFFERENCE</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h1 class="text-center">Take the guesswork out of getting ahead</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5 class="text-center">Build skills. Learn by doing. Get the support you need. Land the job you want.</h5>
+            </div>
+          </div>
+        </div>    
+    
+      </section>
+    <!-- Your scroll section -->
+    <!-- Features Section - Home Page -->
+    <section id="features" class="features">
+
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Make your move in 3 to 9 months</h3>
+            <p>
+              <b>An online, flexible program to fit your life
+
+                Springboard programs help you grow and evolve at your own pace. No need to quit your job or put your life on hold.</b> </p>
+            <a class="btn btn-success" href="#" role="button">Get Started</a>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="image-stack">
+              <img src="{% static 'images/job3.jpg' %}" alt="Image 3">
+              <img src="{% static 'images/w6.jpg' %}" alt="Image 3">
+            </div>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+          <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+            <img src="{% static 'images/i1.webp' %}" alt="Image 3">
+          </div>
+          <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+            <h3>Learn deeper with hands-on projects</h3>
+            <p><b>Practice the skills you’ll use in the real world
+
+              Unlike other online courses, here you'll build a portfolio that will give you an edge with employers.</b></p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
+            </ul>
+            <p>
+            <a class="btn btn-primary" href="#footer" role="button">Get Started</a></p>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    
+
+    <!-- Info section -->
+    
+    <!-- Your info section -->
+    <!--pricing------------>
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="padd-section text-cente">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center">
+
+          <h2>Meet With Price</h2>
+          <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>BASIC</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="/email" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>PERSONAL</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="/email" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>BUSINESS</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="/email" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-pricing">
+              <div class="pricing-table">
+                <h4>PROFESSIONAL</h4>
+                <h2>$29</h2>
+                <ul class="list-unstyled">
+                  <li><b>4 GB</b> Ram</li>
+                  <li><b>7/24</b> Tech Support</li>
+                  <li><b>40 GB</b> SSD Cloud Storage</li>
+                  <li>Monthly Backups</li>
+                  <li>Palo Protection</li>
+                </ul>
+                <div class="table_btn">
+                  <a href="/email" class="btn"><i class="bi bi-cart"></i> Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
+
+    <!-- End section -->
+    <!-- Section for Carousel -->
+<section id="carousel">
+  <div class="container-fluid">
+    <div class="row">
+      <div  id="carousel" class="col-md-4 bg-light">
+        <h2 class="text-center">NyKinSky Transform Your Life</h2>
+        <p class="text-center">"Now I have more freedom... I have flexibility over when I do my work and how I manage my time, and I really like that."<br>
+        <hr>
+          <strong>Julia Ayres</strong><br>
+        Software Engineering Graduate<br>
+        From Hotel Front Desk Manager<br>
+        To Full-stack Developer @ Northspyre</p>
+      </div>
+      <div class="col-md-8 bg-secondary">
+        <!-- Video Carousel -->
+        <div id="videoCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <iframe width="100%" height="315" src="{% static 'videos/v1.mp4' %}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe width="100%" height="315" src="{% static 'videos/v2.mp4' %}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe width="100%" height="315" src="{% static 'videos/v3.mp4' %}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Your end section -->
+    <section id="info">
+      <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <h1 class="text-center">Your questions, answered</h1>
+              <hr style="border-top: 1px solid black;">
+      
+              <p class="text-center subheading">NyKinSky’s courses are 100% online?  <i class="fa-solid fa-plus"></i></p>
+              <hr style="border-top: 1px solid black;">
+      
+              <p class="text-center subheading">NyinSKy courses typically take 6 - 9 months part-time. <i class="fa-solid fa-plus"></i></p>
+              <hr style="border-top: 1px solid black;">
+      
+              <p class="text-center subheading">What's involved in the "technical skill survey"? <i class="fa-solid fa-plus"></i></p>
+            </div>
+          </div>
+      </section>
+      
+        <!-- Logos section -->
+      <!---->
+      <section id="email_form">
+        <div class="container mt-5">
+            <h2>Join Us Now</h2>
+            <form action="/why1" method = "post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{{ email }}">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer id="footer">
+        <i class="social-icon fa-brands fa-twitter"></i>
+        <i class="social-icon fa-brands fa-facebook"></i>
+        <i class="social-icon fa-brands fa-instagram"></i>
+        <i class="social-icon fa-solid fa-envelope"></i>
+        <p>© Copyright NyKinSky</p>
+        <p>created by <i class="fa-solid fa-heart"></i><em>Ashu</em></p>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

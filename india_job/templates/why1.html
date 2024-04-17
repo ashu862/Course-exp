@@ -1,0 +1,889 @@
+<!--boiler plate-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>How it works</title>
+    <!-- css only -->
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Ubuntu&display=swap" 
+    rel="stylesheet"/>
+    <!-- css style sheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'india_job/course.css' %}"/>
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- javascript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* CSS for the left section with id "achievement" */
+      #achievement {
+        background-color: #ffdab9; /* Peach color */
+        padding: 20px;
+        margin: 10px; /* Margin from the border */
+      }
+
+      #carousel{
+         /* Peach color */
+        padding: 20px;
+        margin: 10px;
+
+      }
+      .subheading {
+        cursor: pointer;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .career-text {
+        margin-top: 20px;
+      }
+      .career-link {
+        color: blue;
+      }
+
+      /* */
+      #footer {
+        text-align: center;
+        padding: 7% 15%;
+      }
+      #press {
+        background-color: #F7B787;
+        text-align: center;
+        padding: 3%;
+      }
+      #navbar {
+        background-color: #35374B; /* Background color */
+      
+    }
+
+    #navbar a {
+        float: left;
+        display: block;
+        color: #35374B; /* Text color */
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #navbar a:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: black; /* Text color on hover */
+    }
+  
+    #title1{
+      background-color: #7BD3EA;
+    }
+    .split-half{
+      background-color: #96E9C6;
+    }
+    #project{
+      background-color: #96EFFF;
+    }
+    #scroll{
+      background-color: #F2C18D;
+
+    }
+    #info{
+      background-color: #FFCAD4;
+    }
+    #end{
+      background-color: #B7C9F2;
+    }
+    #footer{
+      background-color: #FFCAD4;
+    }
+    #carousel{
+      background-color: #B7C9F2;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+    .section .content {
+      display: flex;
+      align-items: center;
+    }
+    .section .content .text {
+      padding: 0 20px;
+    }
+    .section .content img {
+      max-width: 100%;
+    }
+    .jumbotron {
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000000;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .split-half {
+      height: 100vh;
+    }
+
+    /*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+#faq{
+  background-color: #A1EACB;
+}
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li+li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #9cdc66;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #5c9f24;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+.section-title {
+  text-align: center; /* Align content to the center */
+  margin: 0 auto; /* Center the div horizontally */
+  width: 50%; /* Set width to control the width of the content */
+}
+
+#email_form{
+  background-color: #8DF1C0;
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us .container {
+  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+  background: #fff;
+}
+
+.why-us .icon-box+.icon-box {
+  margin-top: 50px;
+}
+
+.why-us .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: #f3f8fa;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.why-us .icon-box .icon i {
+  color: #68A4C4;
+  font-size: 32px;
+}
+
+.why-us .icon-box:hover .icon {
+  background: #68A4C4;
+}
+
+.why-us .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.why-us .icon-box .title {
+  margin-left: 95px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.why-us .icon-box .title a {
+  color: #343a40;
+  transition: 0.3s;
+}
+
+.why-us .icon-box .title a:hover {
+  color: #68A4C4;
+}
+
+.why-us .icon-box .description {
+  margin-left: 95px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.why-us .video-box {
+  position: relative;
+}
+
+.why-us .video-box img {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.why-us .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient(#68A4C4 50%, rgba(104, 164, 196, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+
+.why-us .play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.why-us .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(104, 164, 196, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.why-us .play-btn:hover::after {
+  border-left: 15px solid #68A4C4;
+  transform: scale(20);
+}
+
+.why-us .play-btn:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+.features .row+.row {
+  margin-top: 100px;
+}
+
+.features h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features ul li {
+  padding-bottom: 10px;
+}
+
+.features ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #68A4C4;
+}
+
+.features p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Our Services
+--------------------------------------------------------------*/
+.services {
+  padding-bottom: 20px;
+}
+
+.services .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+  background: #fff;
+  box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.services .icon {
+  margin: 0 auto 20px auto;
+  padding-top: 17px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+}
+
+.services .icon i {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .title a {
+  color: #111;
+}
+
+.services .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.services .icon-box-pink .icon {
+  background: #fceef3;
+}
+
+.services .icon-box-pink .icon i {
+  color: #ff689b;
+}
+
+.services .icon-box-pink:hover {
+  border-color: #ff689b;
+}
+
+.services .icon-box-cyan .icon {
+  background: #e6fdfc;
+}
+
+.services .icon-box-cyan .icon i {
+  color: #3fcdc7;
+}
+
+.services .icon-box-cyan:hover {
+  border-color: #3fcdc7;
+}
+
+.services .icon-box-green .icon {
+  background: #eafde7;
+}
+
+.services .icon-box-green .icon i {
+  color: #41cf2e;
+}
+
+.services .icon-box-green:hover {
+  border-color: #41cf2e;
+}
+
+.services .icon-box-blue .icon {
+  background: #e1eeff;
+}
+
+.services .icon-box-blue .icon i {
+  color: #2282ff;
+}
+
+.services .icon-box-blue:hover {
+  border-color: #2282ff;
+}
+
+.features{
+  background-color: #D7F1F2;
+}
+
+    </style>
+
+  </head>
+  <!--
+  <img src= "{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+  -->
+
+  <body>
+    <section id="navbar" style="z-index: 1000;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Brand image -->
+          <div class="navbar-brand">
+            <img src="{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+          </div>
+    
+          <!-- Brand name -->
+          <span class="navbar-text" style="width: 20%;">NyKinSky & Company</span>
+    
+          <!-- Dropdown buttons -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: 100%;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- First dropdown -->
+              <li class="nav-item dropdown">
+                <h6><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Course
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item dropdown-header">
+                      <h6><a href="/data_ai"> <i class="fa-solid fa-database"></i>Data + AI</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/data_one">Data Analytics CAreer Track</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/data12">Data Science Prep</a>
+                    </li>
+                  </div>
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item">
+                      <h6><a href="/cybers"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/cyber11">Cybersecurit Career Track </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/cyber12">Intro</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <!-- Second dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Why Nykinsky</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown2">
+                  <li class="dropdown-item">
+                    <a href="/why1">How it works</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why2">Mentorship</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why3">Job gurantee</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why4">Outcomes & stories</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Third dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Our Partners</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown3">
+                  <li class="dropdown-item">
+                    <a href="/p1">Universities</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p2">Businesses</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p3">Hire for graduates</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p4">Blogs</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Add more dropdowns with similar structure if needed -->
+            </ul>
+          </div>
+    
+          <!-- Button at right -->
+          <div style="width: 10%; text-align: right;">
+            <a href="#email_form" class="btn btn-outline-primary">Apply</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Combine technical skill-building, human support, and project-based learning to set your career in motion.</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+               <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1"> <i class="fa-regular fa-calendar-xmark"></i> Online, flexible, and fast </a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Learn on your schedule in less time than a full degree. No need to put your life on hold.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+             <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed"> <i class="fa-regular fa-folder-open"></i>  Project-based to turn learning into action</a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Build skills and put them to work through real-world projects. You’ll be ahead of the game before you’re in the field.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+               <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed"><i class="fa-solid fa-person"></i> Human support from day one
+                </a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>Get expert one-on-one support from a mentor, career coach, and student advisor. They’ll help you define your path, knock down obstacles, and meet your goals.
+
+
+                </p>
+              </div>
+            </li>
+
+            
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+<!-- hero section ---------------  -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Grow your business with Vesperr</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with Bootstrap</h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="#email_form" class="btn btn-outline-success">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img class="hero" src="{% static 'images/hero2.jpg' %}" alt="Your Image" class="img-fluid mt-3"/>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+<!---->
+<section id="">
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+              <h4 class="title"><a href="#email_form">Join Us</a></h4>
+              <p class="description"><b>4-6 months</b> work experience as soon as you join Nykinsky & Company</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h4 class="title"><a href="">Work with Us</a></h4>
+              <p class="description">Work profile related to <strong>Data Science, Artificial Intelligence, Machine Learning </strong>, and lot more.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h4 class="title"><a href="#email_form">Learn from Us</a></h4>
+              <p class="description">Life changing opportunity to kick start career in<b> modern technologies.</b></p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="fa-regular fa-thumbs-up"></i></div>
+              <h4 class="title"><a href="">Gain Experience</a></h4>
+              <p class="description">All the project and work experience comes with<b> certification </b>for future refernce</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 video-box">
+            <img src="{% static 'images/work1.jpg' %}" alt="Logo" >
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+            <div class="icon-box">
+              <div class="icon"><i class="fa-solid fa-star"></i></div>
+              <h4 class="title"><a href="">Mentor: Karen Ko</a></h4>
+              <p class="description">UX Designer at <i>Adobe</i></p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="fa-solid fa-star"></i></i></div>
+              <h4 class="title"><a href="">Mentor: Venkatraman Prabhu</a></h4>
+              <p class="description">Sr Product Manager at <i>Amazon</i></p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our curriculum is different</h2>
+          <p>Our courses are 100% online and always accessible.
+
+            Full-time workers, undergrads, stay-at-home parents, and veterans are all taking Springboard classes right now.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            
+            <img src="{% static 'images/hero2.jpg' %}"  class="img-fluid" alt="Logo" >
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>How you will work:</h3>
+            <p class="fst-italic">
+              Our focus is on real-world applications. We help students build portfolios that outcompete experienced applicant
+            </p>
+            <ul>
+              <li><i class="fa fa-check"></i> 65% of your time goes to hands-on project work</li>
+              <li><i class="fa fa-check"></i> Capstone projects will be graded by your mentor and your portfolio will be reviewed by our in-house hiring managers</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="{% static 'images/hero3.jpg' %}"  class="img-fluid" alt="Logo" >
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Better mentors make for better learning</h3>
+            <p class="fst-italic">
+              Springboard programs includes mentorship — because we believe humans learn best from other humans.
+            </p>
+            <p>
+              <i class="fa fa-check"></i> Personalized guidance to move you forward
+              <br>
+              <i class="fa fa-check"></i> Accountability at every step
+            </p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="{% static 'images/hero2.jpg' %}"  class="img-fluid" alt="Logo" >
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Never job search alone</h3>
+            <p>Career support at every step:</p>
+            <ul>
+              <li><i class="fa fa-check"></i> Meet with your career coach 1-on-1 to plan, practice, and negotiate successfully.</li>
+              <li><i class="fa fa-check"></i> Join group coaching sessions to get feedback, share advice, and network with the Springboard community.</li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="{% static 'images/geraldo.jpg' %}"  class="img-fluid" alt="Logo" >
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Learn how Geraldo went from oil rig operator to coder</h3>
+            <p class="fst-italic">
+              A veteran of the oil and gas industry, Geraldo would spend months at a time on a drillship, far from his pregnant wife.
+            </p>
+            <p>
+              After completing the Springboard Software Engineering Career Track, Geraldo now works as a backend software engineer at Affirm.
+
+The best part? He works from home, which means more quality time with his wife and son.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+</section>
+<!--end of section-->
+<!--  ------------email form ------------>
+    <section id="email_form">
+      <div class="container mt-5">
+          <h2>Join Us Now</h2>
+          <form action="/why1" method = "post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{{ email }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+  </section>
+
+
+
+    
+    <!-- Footer -->
+    
+
+    <footer id="footer">
+      <i class="social-icon fa-brands fa-twitter"></i>
+      <i class="social-icon fa-brands fa-facebook"></i>
+      <i class="social-icon fa-brands fa-instagram"></i>
+      <i class="social-icon fa-solid fa-envelope"></i>
+      <p>© Copyright NyKinSky</p>
+      <p>created by <i class="fa-solid fa-heart"></i><em>Ashu</em></p>
+    </footer>
+    
+  </body>
+</html>

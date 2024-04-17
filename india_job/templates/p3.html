@@ -1,0 +1,996 @@
+<!--boiler plate-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Hire for graduates </title>
+    <!-- css only -->
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Ubuntu&display=swap" 
+    rel="stylesheet"/>
+    <!-- css style sheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'india_job/course.css' %}"/>
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- javascript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* CSS for the left section with id "achievement" */
+      #achievement {
+        background-color: #ffdab9; /* Peach color */
+        padding: 20px;
+        margin: 10px; /* Margin from the border */
+      }
+
+      #carousel{
+         /* Peach color */
+        padding: 20px;
+        margin: 10px;
+
+      }
+      .subheading {
+        cursor: pointer;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .career-text {
+        margin-top: 20px;
+      }
+      .career-link {
+        color: blue;
+      }
+
+      /* */
+      #footer {
+        text-align: center;
+        padding: 7% 15%;
+      }
+      #press {
+        background-color: #F7B787;
+        text-align: center;
+        padding: 3%;
+      }
+      #navbar {
+        background-color: #35374B; /* Background color */
+      
+    }
+
+    #navbar a {
+        float: left;
+        display: block;
+        color: #35374B; /* Text color */
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #navbar a:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: black; /* Text color on hover */
+    }
+  
+    #title1{
+      background-color: #7BD3EA;
+    }
+    .split-half{
+      background-color: #96E9C6;
+    }
+    #project{
+      background-color: #96EFFF;
+    }
+    #scroll{
+      background-color: #F2C18D;
+
+    }
+    #info{
+      background-color: #FFCAD4;
+    }
+    #end{
+      background-color: #B7C9F2;
+    }
+    #footer{
+      background-color: #FFCAD4;
+    }
+    #carousel{
+      background-color: #B7C9F2;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+    .section .content {
+      display: flex;
+      align-items: center;
+    }
+    .section .content .text {
+      padding: 0 20px;
+    }
+    .section .content img {
+      max-width: 100%;
+    }
+    .jumbotron {
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000000;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .split-half {
+      height: 100vh;
+    }
+
+     /*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+.blog {
+  padding: 40px 0 20px 0;
+}
+
+.blog .entry {
+  padding: 30px;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog .entry .entry-img {
+  max-height: 440px;
+  margin: -30px -30px 20px -30px;
+  overflow: hidden;
+}
+
+.blog .entry .entry-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.blog .entry .entry-title a {
+  color: #1e4356;
+  transition: 0.3s;
+}
+
+.blog .entry .entry-title a:hover {
+  color: #68A4C4;
+}
+
+.blog .entry .entry-meta {
+  margin-bottom: 15px;
+  color: #72afce;
+}
+
+.blog .entry .entry-meta ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.blog .entry .entry-meta ul li+li {
+  padding-left: 20px;
+}
+
+.blog .entry .entry-meta i {
+  font-size: 16px;
+  margin-right: 8px;
+  line-height: 0;
+}
+
+.blog .entry .entry-meta a {
+  color: #777777;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.blog .entry .entry-content p {
+  line-height: 24px;
+}
+
+.blog .entry .entry-content .read-more {
+  -moz-text-align-last: right;
+  text-align-last: right;
+}
+
+.blog .entry .entry-content .read-more a {
+  display: inline-block;
+  background: #68A4C4;
+  color: #fff;
+  padding: 6px 20px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.blog .entry .entry-content .read-more a:hover {
+  background: #7aafcb;
+}
+
+.blog .entry .entry-content h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.blog .entry .entry-content blockquote {
+  overflow: hidden;
+  background-color: #fafafa;
+  padding: 60px;
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.blog .entry .entry-content blockquote p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.blog .entry .entry-content blockquote::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #1e4356;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.blog .entry .entry-footer {
+  padding-top: 10px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.blog .entry .entry-footer i {
+  color: #4c99c1;
+  display: inline;
+}
+
+.blog .entry .entry-footer a {
+  color: #255269;
+  transition: 0.3s;
+}
+
+.blog .entry .entry-footer a:hover {
+  color: #68A4C4;
+}
+
+.blog .entry .entry-footer .cats {
+  list-style: none;
+  display: inline;
+  padding: 0 20px 0 0;
+  font-size: 14px;
+}
+
+.blog .entry .entry-footer .cats li {
+  display: inline-block;
+}
+
+.blog .entry .entry-footer .tags {
+  list-style: none;
+  display: inline;
+  padding: 0;
+  font-size: 14px;
+}
+
+.blog .entry .entry-footer .tags li {
+  display: inline-block;
+}
+
+.blog .entry .entry-footer .tags li+li::before {
+  padding-right: 6px;
+  color: #6c757d;
+  content: ",";
+}
+
+.blog .entry .entry-footer .share {
+  font-size: 16px;
+}
+
+.blog .entry .entry-footer .share i {
+  padding-left: 5px;
+}
+
+.blog .entry-single {
+  margin-bottom: 30px;
+}
+
+.blog .blog-author {
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog .blog-author img {
+  width: 120px;
+  margin-right: 20px;
+}
+
+.blog .blog-author h4 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 0px;
+  padding: 0;
+  color: #1e4356;
+}
+
+.blog .blog-author .social-links {
+  margin: 0 10px 10px 0;
+}
+
+.blog .blog-author .social-links a {
+  color: rgba(30, 67, 86, 0.5);
+  margin-right: 5px;
+}
+
+.blog .blog-author p {
+  font-style: italic;
+  color: #b7b7b7;
+}
+
+.blog .blog-comments {
+  margin-bottom: 30px;
+}
+
+.blog .blog-comments .comments-count {
+  font-weight: bold;
+}
+
+.blog .blog-comments .comment {
+  margin-top: 30px;
+  position: relative;
+}
+
+.blog .blog-comments .comment .comment-img {
+  margin-right: 14px;
+}
+
+.blog .blog-comments .comment .comment-img img {
+  width: 60px;
+}
+
+.blog .blog-comments .comment h5 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.blog .blog-comments .comment h5 a {
+  font-weight: bold;
+  color: #444;
+  transition: 0.3s;
+}
+
+.blog .blog-comments .comment h5 a:hover {
+  color: #68A4C4;
+}
+
+.blog .blog-comments .comment h5 .reply {
+  padding-left: 10px;
+  color: #1e4356;
+}
+
+.blog .blog-comments .comment h5 .reply i {
+  font-size: 20px;
+}
+
+.blog .blog-comments .comment time {
+  display: block;
+  font-size: 14px;
+  color: #2b607c;
+  margin-bottom: 5px;
+}
+
+.blog .blog-comments .comment.comment-reply {
+  padding-left: 40px;
+}
+
+.blog .blog-comments .reply-form {
+  margin-top: 30px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog .blog-comments .reply-form h4 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.blog .blog-comments .reply-form p {
+  font-size: 14px;
+}
+
+.blog .blog-comments .reply-form input {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+}
+
+.blog .blog-comments .reply-form input:focus {
+  box-shadow: none;
+  border-color: #b1d0e1;
+}
+
+.blog .blog-comments .reply-form textarea {
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 14px;
+}
+
+.blog .blog-comments .reply-form textarea:focus {
+  box-shadow: none;
+  border-color: #b1d0e1;
+}
+
+.blog .blog-comments .reply-form .form-group {
+  margin-bottom: 25px;
+}
+
+.blog .blog-comments .reply-form .btn-primary {
+  border-radius: 4px;
+  padding: 10px 20px;
+  border: 0;
+  background-color: #1e4356;
+}
+
+.blog .blog-comments .reply-form .btn-primary:hover {
+  background-color: #255269;
+}
+
+.blog .blog-pagination {
+  color: #387ea2;
+}
+
+.blog .blog-pagination ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.blog .blog-pagination li {
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.blog .blog-pagination li a {
+  color: #1e4356;
+  padding: 7px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog .blog-pagination li.active,
+.blog .blog-pagination li:hover {
+  background: #68A4C4;
+}
+
+.blog .blog-pagination li.active a,
+.blog .blog-pagination li:hover a {
+  color: #fff;
+}
+
+.blog .sidebar {
+  padding: 30px;
+  margin: 0 0 60px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog .sidebar .sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 0 0 0;
+  margin: 0 0 15px 0;
+  color: #1e4356;
+  position: relative;
+}
+
+.blog .sidebar .sidebar-item {
+  margin-bottom: 30px;
+}
+
+.blog .sidebar .search-form form {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+  position: relative;
+}
+
+.blog .sidebar .search-form form input[type=text] {
+  border: 0;
+  padding: 4px;
+  border-radius: 4px;
+  width: calc(100% - 40px);
+}
+
+.blog .sidebar .search-form form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 15px;
+  margin: -1px;
+  background: #68A4C4;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
+  line-height: 0;
+}
+
+.blog .sidebar .search-form form button i {
+  line-height: 0;
+}
+
+.blog .sidebar .search-form form button:hover {
+  background: #77adca;
+}
+
+.blog .sidebar .categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .sidebar .categories ul li+li {
+  padding-top: 10px;
+}
+
+.blog .sidebar .categories ul a {
+  color: #1e4356;
+  transition: 0.3s;
+}
+
+.blog .sidebar .categories ul a:hover {
+  color: #68A4C4;
+}
+
+.blog .sidebar .categories ul a span {
+  padding-left: 5px;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.blog .sidebar .recent-posts .post-item+.post-item {
+  margin-top: 15px;
+}
+
+.blog .sidebar .recent-posts img {
+  width: 80px;
+  float: left;
+}
+
+.blog .sidebar .recent-posts h4 {
+  font-size: 15px;
+  margin-left: 95px;
+  font-weight: bold;
+}
+
+.blog .sidebar .recent-posts h4 a {
+  color: #1e4356;
+  transition: 0.3s;
+}
+
+.blog .sidebar .recent-posts h4 a:hover {
+  color: #68A4C4;
+}
+
+.blog .sidebar .recent-posts time {
+  display: block;
+  margin-left: 95px;
+  font-style: italic;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.blog .sidebar .tags {
+  margin-bottom: -10px;
+}
+
+.blog .sidebar .tags ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .sidebar .tags ul li {
+  display: inline-block;
+}
+
+.blog .sidebar .tags ul a {
+  color: #3f8db5;
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #e4eff5;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.blog .sidebar .tags ul a:hover {
+  color: #fff;
+  border: 1px solid #68A4C4;
+  background: #68A4C4;
+}
+
+.blog .sidebar .tags ul a span {
+  padding-left: 5px;
+  color: #bedae8;
+  font-size: 14px;
+}
+
+    </style>
+
+  </head>
+  <!--
+  <img src= "{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+  -->
+
+  <body>
+    <section id="navbar" style="z-index: 1000;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Brand image -->
+          <div class="navbar-brand">
+            <img src="{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+          </div>
+    
+          <!-- Brand name -->
+          <span class="navbar-text" style="width: 20%;">NyKinSky & Company</span>
+    
+          <!-- Dropdown buttons -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: 100%;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- First dropdown -->
+              <li class="nav-item dropdown">
+                <h6><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Course
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item dropdown-header">
+                      <h6><a href="/data_ai"> <i class="fa-solid fa-database"></i>Data + AI</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/data_one">Data Analytics CAreer Track</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/data12">Data Science Prep</a>
+                    </li>
+                  </div>
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item">
+                      <h6><a href="/cybers"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/cyber11">Cybersecurit Career Track </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/cyber12">Intro]</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <!-- Second dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Why Nykinsky</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown2">
+                  <li class="dropdown-item">
+                    <a href="/why1">How it works</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why2">Mentorship</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why3">Job gurantee</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why4">Outcomes & stories</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Third dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Our Partners</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown3">
+                  <li class="dropdown-item">
+                    <a href="/p1">Universities</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p2">Businesses</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p3">Hire for graduates</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p4">Blogs</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Add more dropdowns with similar structure if needed -->
+            </ul>
+          </div>
+    
+          <!-- Button at right -->
+          <div style="width: 10%; text-align: right;">
+            <a href="/email" class="btn btn-primary">APPLY</a>
+
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!---->
+    
+<!-- ======= Blog Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+
+      <div class="col-lg-8 entries">
+
+        <article class="entry">
+
+          <div class="entry-img">
+            <img src="{% static 'images/i1.webp' %}" alt="Image 1">
+          </div>
+
+          <h2 class="entry-title">
+            <a href="/email">How To Get Into Cybersecurity With No Experience [Job Guide]</a>
+          </h2>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="fa fa-person"></i> <a href="blog-single.html">John Doe</a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-comments"></i> <a href="blog-single.html">12 Comments</a></li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p>
+              Cybersecurity remains a critical need for businesses and law enforcement, ensuring sustained demand in this field. If you’re new to cybersecurity and lack formal skills or experience, this guide is for you. It will cover essential education, skills, certifications, networking, and industry knowledge to kickstart your cybersecurity career.</p>
+            <div class="read-more">
+              <a href="/email">Read More</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+
+        <article class="entry">
+
+          <div class="entry-img">
+            <img src="{% static 'images/w6.jpg' %}" alt="Image 1">
+          </div>
+
+          <h2 class="entry-title">
+            <a href="/email">Best UI/UX Design Bootcamps to Get You Skilled & Hired</a>
+          </h2>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="fa fa-person"></i> <a href="blog-single.html">John Doe</a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-comments"></i> <a href="blog-single.html">12 Comments</a></li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p>
+              As the demand for skilled UX professionals grows, UX bootcamps have emerged as a cost-effective and efficient alternative to traditional degree programs.</p>
+            <div class="read-more">
+              <a href="/email">Read More</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+
+        <article class="entry">
+
+          <div class="entry-img">
+            <img src="{% static 'images/w1.jpg' %}" alt="Image 1">
+          </div>
+
+          <h2 class="entry-title">
+            <a href="">Best Software Engineering Certifications [2024 Guide]</a>
+          </h2>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="fa fa-person"></i> <a href="blog-single.html">John Doe</a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-comments"></i> <a href="blog-single.html">12 Comments</a></li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p>
+              Pursuing a certification in the software engineering field is a strategic move for career advancement. In this field, certifications not only set you apart but can also lead to significant salary increases. A 2022 report indicated an average salary boost of $12,000 for IT professionals with additional certifications.
+            </p>
+            <div class="read-more">
+              <a href="/email">Read More</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+
+        <article class="entry">
+
+          <div class="entry-img">
+            <img src="{% static 'images/w8.jpg' %}" alt="Image 1">
+          </div>
+
+          <h2 class="entry-title">
+            <a href="blog-single.html">Are Cybersecurity Bootcamps Really Worth It?
+             </h2>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="fa fa-person"></i> <a href="blog-single.html">John Doe</a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+              <li class="d-flex align-items-center"><i class="fa fa-comments"></i> <a href="blog-single.html">12 Comments</a></li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p>
+              A career in cybersecurity offers both job stability and lucrative salaries. It’s a noble profession—you’re responsible for safeguarding sensitive data and digital assets—and because there’s such a shortage of cybersecurity professionals, it’s not unheard of for even entry-level positions to come with six-figure salaries.
+
+</p>
+            <div class="read-more">
+              <a href="/email">Read More</a>
+            </div>
+          </div>
+
+        </article><!-- End blog entry -->
+
+        <div class="blog-pagination">
+          <ul class="justify-content-center">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+          </ul>
+        </div>
+
+      </div><!-- End blog entries list -->
+
+      <div class="col-lg-4">
+
+        <div class="sidebar">
+
+          <h3 class="sidebar-title">Search</h3>
+          <div class="sidebar-item search-form">
+            <form action="">
+              <input type="text">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div><!-- End sidebar search formn-->
+
+          <h3 class="sidebar-title">Categories</h3>
+          <div class="sidebar-item categories">
+            <ul>
+              <li><a href="#">General <span>(25)</span></a></li>
+              <li><a href="#">Lifestyle <span>(12)</span></a></li>
+              <li><a href="#">Travel <span>(5)</span></a></li>
+              <li><a href="#">Design <span>(22)</span></a></li>
+              <li><a href="#">Creative <span>(8)</span></a></li>
+              <li><a href="#">Educaion <span>(14)</span></a></li>
+            </ul>
+          </div><!-- End sidebar categories-->
+
+          <h3 class="sidebar-title">Recent Posts</h3>
+          <div class="sidebar-item recent-posts">
+            <div class="post-item clearfix">
+              <img src="{% static 'images/w1.jpg' %}" alt="Image 1">
+              <h4><a href="/p4">Nikhil blandit at in nihil autem</a></h4>
+              <time datetime="2020-01-01">Jan 1, 2024</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="{% static 'images/w2.jpg' %}" alt="Image 1">
+              <h4><a href="blog-single.html">Shiva Sam et Amazon</a></h4>
+              <time datetime="2020-01-01">Jan 1, 2024</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="{% static 'images/w3.jpg' %}" alt="Image 1">
+              <h4><a href="/p4">M S Singh at Cinda</a></h4>
+              <time datetime="2020-01-01">Jan 15, 2024</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="{% static 'images/w5.jpg' %}" alt="Image 1">
+              <h4><a href="/p4">Labsh Sharma at Accenture</a></h4>
+              <time datetime="2020-01-01">Jan 30, 2024</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="{% static 'images/w7.jpg' %}" alt="Image 1">
+              <h4><a href="/p4">Mohit Mishra at Ziba</a></h4>
+              <time datetime="2020-01-01">Jan 31, 2024</time>
+            </div>
+
+          </div><!-- End sidebar recent posts-->
+
+          <h3 class="sidebar-title">Tags</h3>
+          <div class="sidebar-item tags">
+            <ul>
+              <li><a href="#">App</a></li>
+              <li><a href="#">IT</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Mac</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Office</a></li>
+              <li><a href="#">Creative</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Smart</a></li>
+              <li><a href="#">Tips</a></li>
+              <li><a href="#">Marketing</a></li>
+            </ul>
+          </div><!-- End sidebar tags-->
+
+        </div><!-- End sidebar -->
+
+      </div><!-- End blog sidebar -->
+
+    </div>
+
+  </div>
+</section><!-- End Blog Section -->
+
+    
+    <!-- Footer -->
+    
+
+    <footer id="footer">
+      <i class="social-icon fa-brands fa-twitter"></i>
+      <i class="social-icon fa-brands fa-facebook"></i>
+      <i class="social-icon fa-brands fa-instagram"></i>
+      <i class="social-icon fa-solid fa-envelope"></i>
+      <p>© Copyright NyKinSky</p>
+      <p>created by <i class="fa-solid fa-heart"></i><em>Ashu</em></p>
+    </footer>
+    
+  </body>
+</html>

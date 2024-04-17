@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2>Student Details</h2>
+  
+  <div class="row">
+    <!-- Dropdowns -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Course
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="course1Checkbox" value="Course 1">
+            <label class="form-check-label" for="course1Checkbox">
+              Course 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="course2Checkbox" value="Course 2">
+            <label class="form-check-label" for="course2Checkbox">
+              Course 2
+            </label>
+          </div>
+          <!-- Add more courses here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Grade
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="grade1Checkbox" value="Grade 1">
+            <label class="form-check-label" for="grade1Checkbox">
+              Grade 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="grade2Checkbox" value="Grade 2">
+            <label class="form-check-label" for="grade2Checkbox">
+              Grade 2
+            </label>
+          </div>
+          <!-- Add more grades here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Subject
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="subject1Checkbox" value="Subject 1">
+            <label class="form-check-label" for="subject1Checkbox">
+              Subject 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="subject2Checkbox" value="Subject 2">
+            <label class="form-check-label" for="subject2Checkbox">
+              Subject 2
+            </label>
+          </div>
+          <!-- Add more subjects here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Semester
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="semester1Checkbox" value="Semester 1">
+            <label class="form-check-label" for="semester1Checkbox">
+              Semester 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="semester2Checkbox" value="Semester 2">
+            <label class="form-check-label" for="semester2Checkbox">
+              Semester 2
+            </label>
+          </div>
+          <!-- Add more semesters here -->
+        </div>
+      </div>
+    </div>
+    <!-- Add more dropdowns here -->
+  </div>
+
+  <div id="studentDetails" class="mt-3 row">
+    <!-- Student details will be displayed here -->
+  </div>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Sample student data (replace with your actual data)
+  var students = [
+    { name: 'John Doe', image: 'https://via.placeholder.com/151', course: 'Course 1', grade: 'Grade 1', subject: 'Subject 1', semester: 'Semester 1' },
+    { name: 'Jane Smith', image: 'https://via.placeholder.com/152', course: 'Course 2', grade: 'Grade 2', subject: 'Subject 2', semester: 'Semester 2' },
+    { name: 'Jiya Doe', image: 'https://via.placeholder.com/153', course: 'Course 1', grade: 'Grade 1', subject: 'Subject 1', semester: 'Semester 1' },
+    { name: 'Jam Smith', image: 'https://via.placeholder.com/154', course: 'Course 2', grade: 'Grade 2', subject: 'Subject 2', semester: 'Semester 2' },
+   
+    // Add more student data here
+  ];
+
+  // Function to filter students based on selected checkboxes
+  function filterStudents() {
+    var selectedCourses = [];
+    var selectedGrades = [];
+    var selectedSubjects = [];
+    var selectedSemesters = [];
+
+    // Get selected options from each dropdown
+    $('input[type="checkbox"][id^="course"]:checked').each(function() {
+      selectedCourses.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="grade"]:checked').each(function() {
+      selectedGrades.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="subject"]:checked').each(function() {
+      selectedSubjects.push($(this).val());
+    });
+    $('input[type="checkbox"][id^="semester"]:checked').each(function() {
+      selectedSemesters.push($(this).val());
+    });
+
+    // Filter students based on selected options
+    var filteredStudents = students.filter(function(student) {
+      return (
+        (selectedCourses.length === 0 || selectedCourses.includes(student.course)) &&
+        (selectedGrades.length === 0 || selectedGrades.includes(student.grade)) &&
+        (selectedSubjects.length === 0 || selectedSubjects.includes(student.subject)) &&
+        (selectedSemesters.length === 0 || selectedSemesters.includes(student.semester))
+      );
+    });
+
+    // Update student details display
+    displayStudents(filteredStudents);
+  }
+
+  // Function to display filtered student details
+  function displayStudents(students) {
+    var studentDetailsContainer = $('#studentDetails');
+    studentDetailsContainer.empty();
+
+    students.forEach(function(student) {
+      var studentCard = $('<div class="col-md-3 mb-3">');
+      var cardBody = $('<div class="card-body text-center">');
+      var studentImage = $('<img class="img-fluid mb-2" src="' + student.image + '" alt="Student Image">');
+      var studentName = $('<h5 class="card-title">' + student.name + '</h5>');
+
+      cardBody.append(studentImage);
+      cardBody.append(studentName);
+      studentCard.append(cardBody);
+      studentDetailsContainer.append(studentCard);
+    });
+  }
+
+  // Call the filterStudents function when a checkbox is clicked
+  $('input[type="checkbox"]').click(filterStudents);
+</script>
+
+</body>
+</html>

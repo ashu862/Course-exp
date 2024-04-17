@@ -1,0 +1,950 @@
+<!--boiler plate-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Universities</title>
+    <!-- css only -->
+    <!-- Google Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&family=Ubuntu&display=swap" 
+    rel="stylesheet"/>
+    <!-- css style sheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'india_job/course.css' %}"/>
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- javascript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* CSS for the left section with id "achievement" */
+      #achievement {
+        background-color: #ffdab9; /* Peach color */
+        padding: 20px;
+        margin: 10px; /* Margin from the border */
+      }
+
+      #carousel{
+         /* Peach color */
+        padding: 20px;
+        margin: 10px;
+
+      }
+      .subheading {
+        cursor: pointer;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .career-text {
+        margin-top: 20px;
+      }
+      .career-link {
+        color: blue;
+      }
+
+      /* */
+      #footer {
+        text-align: center;
+        padding: 7% 15%;
+      }
+      #press {
+        background-color: #F7B787;
+        text-align: center;
+        padding: 3%;
+      }
+      #navbar {
+        background-color: #35374B; /* Background color */
+      
+    }
+
+    #navbar a {
+        float: left;
+        display: block;
+        color: #35374B; /* Text color */
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #navbar a:hover {
+        background-color: #ddd; /* Background color on hover */
+        color: black; /* Text color on hover */
+    }
+  
+    #title1{
+      background-color: #7BD3EA;
+    }
+    .split-half{
+      background-color: #96E9C6;
+    }
+    #project{
+      background-color: #96EFFF;
+    }
+    #scroll{
+      background-color: #F2C18D;
+
+    }
+    #info{
+      background-color: #FFCAD4;
+    }
+    #end{
+      background-color: #B7C9F2;
+    }
+    #footer{
+      background-color: #FFCAD4;
+    }
+    #carousel{
+      background-color: #B7C9F2;
+    }
+
+    .section {
+      padding: 50px 0;
+    }
+    .section .content {
+      display: flex;
+      align-items: center;
+    }
+    .section .content .text {
+      padding: 0 20px;
+    }
+    .section .content img {
+      max-width: 100%;
+    }
+    .jumbotron {
+      background-image: url('background.jpg');
+      background-size: cover;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000000;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .split-half {
+      height: 100vh;
+    }
+
+    /* new css */
+
+    
+/* About Section - Home Page
+------------------------------*/
+.about {
+  --background-color: #f4f4f4;
+}
+
+.about .content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  padding: 10px 20px;
+  background: rgba(var(--accent-color-rgb), 0.05);
+  color: var(--accent-color);
+  border-radius: 7px;
+  display: inline-block;
+}
+
+.about .content h2 {
+  font-weight: 700;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .read-more {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .content .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.about .content .read-more:hover {
+  background: rgba(var(--accent-color-rgb), 0.8);
+  padding-right: 19px;
+}
+
+.about .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+.about .icon-box {
+  padding: 50px 40px;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease-out 0s;
+  background-color: #fff;
+}
+
+.about .icon-box i {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 0;
+  transition: all 0.4s ease-out 0s;
+  background-color: rgba(var(--accent-color-rgb), 0.05);
+  color: var(--accent-color);
+}
+
+.about .icon-box h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.about .icon-box p {
+  margin-bottom: 0;
+}
+
+.about .icon-box:hover i {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.about .icon-boxes .col-md-6:nth-child(2) .icon-box,
+.about .icon-boxes .col-md-6:nth-child(4) .icon-box {
+  margin-top: -40px;
+}
+
+@media (max-width: 768px) {
+
+  .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
+  .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
+    margin-top: 0;
+  }
+}
+    /*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+/* Hero Section - Home Page
+------------------------------*/
+.hero {
+  --default-color: #ffffff;
+  --default-color-rgb: 255, 255, 255;
+  --background-color: #000000;
+  --background-color-rgb: 0, 0, 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 160px 0 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero:before {
+  content: "";
+  background: rgba(var(--background-color-rgb), 0.5);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+   margin: 0;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: rgba(var(--default-color-rgb), 0.8);
+  margin: 5px 0 0 0;
+  font-size: 20px;
+}
+
+.hero .sign-up-form {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hero .sign-up-form .form-control {
+  border: none;
+}
+
+.hero .sign-up-form .form-control:active,
+.hero .sign-up-form .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.hero .sign-up-form input[type=submit] {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  padding: 8px 20px 10px 20px;
+  border-radius: 7px;
+  color: var(--contrast-color);
+}
+
+.hero .sign-up-form input[type=submit]:hover {
+  background-color: rgba(var(--accent-color-rgb), 0.9);
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}
+
+/* Clients Section - Home Page
+------------------------------*/
+.clients {
+  padding: 10px 0;
+}
+
+.clients .client-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clients .client-logo img {
+  padding: 40px;
+  max-width: 80%;
+  transition: 0.3s;
+  opacity: 0.5;
+  filter: grayscale(100);
+}
+
+.clients .client-logo img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .clients .client-logo img {
+    padding: 20px;
+  }
+}
+#about{
+  background-color: #A9E5F4;
+}
+
+/* Team Section - Home Page
+------------------------------*/
+.team {
+  --background-color: #f4f4f4;
+}
+
+.team .member {
+  position: relative;
+}
+
+.team .member .member-img {
+  margin: 0 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid var(--background-color);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .team .member .member-img {
+    margin: 0 60px;
+  }
+}
+
+.team .member .member-img img {
+  position: relative;
+  z-index: 1;
+}
+
+.team .member .member-img .social {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  padding-bottom: 20px;
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.team .member .member-img .social a {
+  transition: 0.3s;
+  color: var(--contrast-color);
+  font-size: 20px;
+  margin: 0 8px;
+}
+
+.team .member .member-img .social a:hover {
+  color: var(--accent-color);
+}
+
+.team .member .member-info {
+  margin-top: 30px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.team .member .member-info span {
+  font-style: italic;
+  display: block;
+  font-size: 15px;
+  color: rgba(var(--default-color-rgb), 0.6);
+  margin-bottom: 10px;
+}
+
+.team .member .member-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.team .member:hover .member-img .social {
+  padding-bottom: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Call-to-action Section - Home Page
+------------------------------*/
+.call-to-action {
+  --default-color: #ffffff;
+  --background-color: #000000;
+  --background-color-rgb: 0, 0, 0;
+  padding: 80px 0;
+  position: relative;
+  -webkit-clip-path: inset(0);
+  clip-path: inset(0);
+}
+
+.call-to-action img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.call-to-action:before {
+  content: "";
+  background: rgba(var(--background-color-rgb), 0.5);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 3;
+}
+
+.call-to-action h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.call-to-action p {
+  color: var(--default-color);
+}
+
+.call-to-action .cta-btn {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
+}
+
+.call-to-action .cta-btn:hover {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+    
+    </style>
+
+  </head>
+  <!--
+  <img src= "{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+  -->
+
+  <body>
+    <section id="navbar" style="z-index: 1000;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <!-- Brand image -->
+          <div class="navbar-brand">
+            <img src="{% static 'images/nykinsky_logo.png' %}" alt="Logo" style="width:50px;">
+          </div>
+    
+          <!-- Brand name -->
+          <span class="navbar-text" style="width: 20%;">NyKinSky & Company</span>
+    
+          <!-- Dropdown buttons -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="width: 100%;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- First dropdown -->
+              <li class="nav-item dropdown">
+                <h6><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Course
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item dropdown-header">
+                      <h6><a href="/data_ai"> <i class="fa-solid fa-database"></i>Data + AI</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/data_one">Data Analytics CAreer Track</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/data12">Data Science Prep</a>
+                    </li>
+                  </div>
+                  <div class="dropdown-label"> <!-- Wrap label and items in a div -->
+                    <li class="dropdown-item">
+                      <h6><a href="/cybers"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</a></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item">
+                      <a href="/cyber11">Cybersecurit Career Track </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a href="/cyber12">Intro</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <!-- Second dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Why Nykinsky</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown2">
+                  <li class="dropdown-item">
+                    <a href="/why1">How it works</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why2">Mentorship</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why3">Job gurantee</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/why4">Outcomes & stories</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Third dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <b>Our Partners</b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown3">
+                  <li class="dropdown-item">
+                    <a href="/p1">Universities</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p2">Businesses</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p3">Hire for graduates</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="/p4">Blogs</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Add more dropdowns with similar structure if needed -->
+            </ul>
+          </div>
+    
+          <!-- Button at right -->
+          <div style="width: 10%; text-align: right;">
+            <a class="btn btn-primary" href="#submit">Apply</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!--new section-->
+
+    <!-- Hero Section - Home Page -->
+    <section id="hero" class="hero">
+
+      <img src="{% static 'images/d2.jpg' %}" class="img-fluid" alt="Image 3">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Nykinsky & Company</h2>
+            <p data-aos="fade-up" data-aos-delay="200">We are team of talented of making excellent garduates</p>
+          </div>
+          <div class="col-lg-5">
+            
+            <form action="/p1" method = "post">
+              {% csrf_token %}
+            <div class="form-group">
+              <label for="name" >Name:</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" value="{{ name }}">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" value="{{ email }}">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="number" class="form-control" id="phone" placeholder="Enter your phone" name="phone" value="{{ phone }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End Hero Section -->
+
+    <section>
+          <!-- Clients Section - Home Page -->
+    <section id="clients" class="clients">
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/TechCrunch.png' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/mashable.png' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/splunk.png' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/tablu.png' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/kali.jpg' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="{% static 'images/sql.jpg' %}" class="img-fluid" alt="Image 3">
+          </div><!-- End Client Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Clients Section -->
+
+
+    </section>
+    <!-- About Section - Home Page -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>About Us</h3>
+            <h2>Turnkey partnership. Built to drive enrollments and success</h2>
+            <p>Our customized offering is designed to meet your university's needs and leverage your institutional brand, networks, and channels to drive growth.
+
+            </p>
+            <a href="#submit" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="fa-solid fa-person"></i>
+                  <h3>Human support helps students succeed</h3>
+                  <p>Ongoing 1:1 mentorship with industry experts
+
+                    Dedicated career coach for every student
+                    
+                  </p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="fa-solid fa-school"></i>
+                  <h3>Institution-quality curriculum</h3>
+                  <p>Market-tested curriculum created & built by educational design experts</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="fa-solid fa-hotel"></i>
+                  <h3>University-branded tech platform
+
+                  </h3>
+                  <p>University brand customization
+
+                    
+                    Digital career tools (e.g. job app tracker)</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <h3>Enrollment management</h3>
+                  <p>Microsite design and build
+
+                    Cross-channel marketing strategy and execution</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <section>
+      <!-- Team Section - Home Page -->
+    <section id="team" class="team">
+
+      <!--  Section Title -->
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Our partners reach their goals with Springboard</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{% static 'images/w8.jpg' %}" class="img-fluid" alt="Image 3">
+              <div class="social">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="{% static 'images/w6.jpg' %}" class="img-fluid" alt="Image 3">
+              <div class="social">
+                <i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Sarah Jhonson</h4>
+              <span>Product Manager</span>
+              <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+              <img src="{% static 'images/w1.jpg' %}" class="img-fluid" alt="Image 3">
+              <div class="social">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
+            <div class="member-img">
+              <img src="{% static 'images/w2.jpg' %}" class="img-fluid" alt="Image 3">
+              <div class="social">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
+            </div>
+          </div><!-- End Team Member -->
+
+          
+        </div>
+
+      </div>
+
+    </section><!-- End Team Section -->
+
+    <!-- Call-to-action Section - Home Page -->
+    <section id="call-to-action" class="call-to-action">
+
+      <img src="{% static 'images/d2.jpg' %}" class="img-fluid" alt="Image 3">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Call To JOin</h3>
+              <p>We’ve tried to build online bootcamp programs on our own without any success and we love what Springboard has given us in a partnership.</p>
+              <a class="cta-btn" href="#submit">Call To Join
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End Call-to-action Section -->
+
+    
+    
+    </section>
+
+
+
+    <!--  new section -------------->
+    <section id="submit">
+      <div class="container">
+          <h2>Join right now!</h2>
+          <form action="/p1" method = "post">
+              {% csrf_token %}
+            <div class="form-group">
+              <label for="name" >Name:</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" value="{{ name }}">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" value="{{ email }}">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="number" class="form-control" id="phone" placeholder="Enter your phone" name="phone" value="{{ phone }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        
+        
+    </section>
+    
+    
+    <!-- Footer -->
+    
+
+    <footer id="footer">
+      <i class="social-icon fa-brands fa-twitter"></i>
+      <i class="social-icon fa-brands fa-facebook"></i>
+      <i class="social-icon fa-brands fa-instagram"></i>
+      <i class="social-icon fa-solid fa-envelope"></i>
+      <p>© Copyright NyKinSky</p>
+      <p>created by <i class="fa-solid fa-heart"></i><em>Ashu</em></p>
+    </footer>
+    
+  </body>
+</html>
